@@ -1,0 +1,33 @@
+<div class="p-3" *ngFor="let detail of flight_details | async">
+    <h1 class="text-center p-2">SpaceX Mission Details</h1>
+    <div class="bg-secondary m-2 p-5 rounded">
+        <div class="d-flex">
+            <div>
+                <img src={{detail.links.mission_patch_small}} alt="">
+            </div>
+            <div class="d-flex flex-column p-3 justify-content-center">
+                <h1 class="m-0">Mission: {{detail.mission_name}}</h1>
+                <p class="m-0"><b>Launch Year:</b> {{detail.launch_year}}</p>
+                <h1 class="m-0">Rocket</h1>
+                <p class="m-0"><b>Name:</b> {{detail.rocket.rocket_name}}</p>
+                <p class="m-0"><b>Type:</b> {{detail.rocket.rocket_type}}</p>
+                <h1 class="m-0">Launch Site</h1>
+                <p class="m-0"><b>Name:</b> {{detail.launch_site.site_name_long}}</p>
+            </div>
+        </div>
+        <div class="pt-3">
+            <h3>Launch Details</h3>
+            <p>{{detail.details}}</p>
+        </div>
+        <hr>
+        <h4 class="text-center pb-3">More Info on Launch Details</h4>
+        <div class="d-flex justify-content-around">
+            <a target="link" href={{detail.links.article_link}}><img width="50"
+                    src="https://cdn-icons-png.flaticon.com/512/1/1176.png" alt=""></a>
+            <a target="link" href={{detail.links.wikipedia}}><img width="50"
+                    src="http://cdn.onlinewebfonts.com/svg/img_499092.png" alt=""></a>
+            <a target="link" href={{detail.links.video_link}}><img width="55"
+                    src="https://www.freeiconspng.com/uploads/video-icon-6.png" alt=""></a>
+        </div>
+    </div>
+</div>
